@@ -37,11 +37,18 @@ int IndexOf(int[] collection, int find) // создаем метод для по
     return position;
 }
 
-int[] array = new int[10]; // объявляем массив по умолчанию 10 элементов.
+Console.WriteLine("Введите длину массива");
+
+int lenArray = Int32.Parse(Console.ReadLine());
+Console.WriteLine(); // пустая строка
+
+int[] array = new int[lenArray]; // объявляем массив по умолчанию 10 элементов.
 
 FillArray(array); //передаем в метод наш массив, произойдет заполнение массива ранд числами
 PrintArray(array); // передаем в метод наш массив, метод будет печатать элементы массива по очереди
+Console.WriteLine("Введите число, которое нужно найти");
+int findNum = Int32.Parse(Console.ReadLine());
 Console.WriteLine(); // пустая строка
 
-int pos = IndexOf(array, 4);
+int pos = IndexOf(array, findNum);
 Console.WriteLine(pos);
