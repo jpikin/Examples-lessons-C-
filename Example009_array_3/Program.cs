@@ -39,7 +39,7 @@ int IndexOf(int[] collection, int find) // создаем метод для по
 
 Console.WriteLine("Введите длину массива");
 
-int lenArray = Int32.Parse(Console.ReadLine());
+int lenArray = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(); // пустая строка
 
 int[] array = new int[lenArray]; // объявляем массив по умолчанию 10 элементов.
@@ -47,8 +47,14 @@ int[] array = new int[lenArray]; // объявляем массив по умо�
 FillArray(array); //передаем в метод наш массив, произойдет заполнение массива ранд числами
 PrintArray(array); // передаем в метод наш массив, метод будет печатать элементы массива по очереди
 Console.WriteLine("Введите число, которое нужно найти");
-int findNum = Int32.Parse(Console.ReadLine());
+int findNum = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(); // пустая строка
 
 int pos = IndexOf(array, findNum);
-Console.WriteLine(pos);
+if (pos == -1)
+    Console.WriteLine("В массиве не содержится данное число");
+else
+    {
+        Console.Write("Искомое число содержится в массиве под индексом ");
+        Console.WriteLine(pos);
+    }
